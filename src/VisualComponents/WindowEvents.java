@@ -5,6 +5,11 @@ import static org.lwjgl.glfw.GLFW.*;
 
 public class WindowEvents {
     public static boolean startUp() {
+        int[] major = new int[1];
+        int[] minor = new int[1];
+        int[] revision = new int[1];
+        glfwGetVersion(major, minor, revision);
+        System.out.println("GLFW Version: " + major[0] + "." + minor[0] + "." + revision[0]);
         glfwInit();
         if (!glfwInit()) {
             System.out.println("Unable to initialize GLFW");
