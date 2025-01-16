@@ -3,14 +3,14 @@ package EngineComponents;
 import static org.lwjgl.glfw.GLFW.*;
 
 public class ErrorHandler {
-    public static void Check_for_error() {
+    public static void glfwCheck_for_error() {
         int glfwErrorCode = glfwGetError(null);
         if (glfwErrorCode != GLFW_NO_ERROR) {
-            Determine_error(glfwErrorCode);
+            glfwDetermine_error(glfwErrorCode);
         }
     }
 
-    public static void Determine_error(int errorCode) {
+    public static void glfwDetermine_error(int errorCode) {
         String errorDescription = glfwGetErrorDescription(errorCode);
         System.out.println("GLFW Error Detected: Code " + errorCode + " - " + errorDescription);
     }
