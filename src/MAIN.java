@@ -2,6 +2,7 @@ import VisualComponents.WindowEvents;
 import EngineComponents.ErrorHandler;
 import VisualComponents.TheWindow;
 import static org.lwjgl.glfw.GLFW.*;
+import static org.lwjgl.opengl.GL11.glViewport;
 
 public class MAIN {
 
@@ -13,28 +14,42 @@ public class MAIN {
 
 
 
-        if (!TheWindow.createWindow()){
+        if (!TheWindow.createWindow()) {
             ErrorHandler.glfwCheck_for_error();
             WindowEvents.CutOff();
         }
         long window = TheWindow.getWindow();
+        int[] width = new int[1];
+        int[] height = new int[1];
+        glfwGetFramebufferSize(window, width, height);
+        glViewport(0, 0, width[0], height[0]);
 
         //while loop
-        while (running){
+        while (running) {
             // Error checking area
-            ErrorHandler.glfwCheck_for_error();
+            glfwPollEvents();
+            if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
+                TheWindow.Windowed();
+                }
 
-            if (glfwWindowShouldClose(window)) {
-                running = false;
-            }
+            else if (glfwGetKey(window, GLFW_KEY_F) == GLFW_PRESS) {
+                TheWindow.Fullscreen();
+                }
+
+            else if (glfwGetKey(window, GLFW_KEY_B) == GLFW_PRESS) {
+        TheWindow.BorderlessWindowed();
+                }
+
+                        if (glfwWindowShouldClose(window)) {
+running = false;
+        }
 
         }
 
 
-        WindowEvents.CutOff();
 
 
+        }
 
-    }
+        }
 
-}

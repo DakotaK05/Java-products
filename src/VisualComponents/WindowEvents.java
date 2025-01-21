@@ -1,6 +1,13 @@
 package VisualComponents;
 
+import VisualComponents.WindowEvents;
+import org.lwjgl.glfw.Callbacks;
+import org.lwjgl.glfw.GLFWVidMode;
 import static org.lwjgl.glfw.GLFW.*;
+import static org.lwjgl.system.MemoryUtil.NULL;
+import org.lwjgl.glfw.GLFWVidMode;
+import org.lwjgl.opengl.GL;
+import static org.lwjgl.opengl.GL11.*;
 
 
 public class WindowEvents {
@@ -23,6 +30,9 @@ public class WindowEvents {
         System.out.println("Ending Process");
         glfwTerminate();
         System.exit(0);
+
+    }
+    public static void updatewindowsize(){
 
     }
 }
