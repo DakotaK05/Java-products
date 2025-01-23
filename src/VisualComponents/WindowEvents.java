@@ -32,7 +32,5 @@ public class WindowEvents {
         System.exit(0);
 
     }
-    public static void updatewindowsize(){
 
-    }
 }
