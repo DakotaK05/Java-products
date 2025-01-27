@@ -1,13 +1,10 @@
 package VisualComponents;
 
-import VisualComponents.WindowEvents;
-import org.lwjgl.glfw.Callbacks;
+
 import org.lwjgl.glfw.GLFWVidMode;
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.system.MemoryUtil.NULL;
-import org.lwjgl.glfw.GLFWVidMode;
-import org.lwjgl.opengl.GL;
-import static org.lwjgl.opengl.GL11.*;
+
 
 public class TheWindow {
     private static long window;
